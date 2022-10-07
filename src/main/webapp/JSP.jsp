@@ -30,7 +30,7 @@
       <% for(Customers cus: customersVector){ %>
 
       <tr>
-          <td><%=cus.getCustomers_id()%></td>
+          <td><%=cus.getCustomer_id()%></td>
           <td><%= cus.getFirst_name()%></td>
           <td><%= cus.getLast_name()%></td>
           <td><%= cus.getPhone()%></td>

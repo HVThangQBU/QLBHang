@@ -35,6 +35,8 @@ public class CustomerServlet extends HttpServlet {
                 request.setAttribute("customer", vector);
                 dispath.dispath(request,response,"/Customers/display.jsp");
                 break;
+            case"insert":
+                dispath.dispath(request,response,"/Customers/insertCustomer.jsp");
             case"update":
                 String id = request.getParameter("id");
                 CustomersDAO customersDAO1 = new CustomersDAO();
@@ -57,17 +59,31 @@ public class CustomerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String service = request.getParameter("service");
         switch (service){
+            case"insert":
+                  String first_name = request.getParameter("fname");
+                  String last_name = request.getParameter("lname");
+                  String phone = request.getParameter("phone");
+                  String email = request.getParameter("email");
+                  String street = request.getParameter("street");
+                  String city = request.getParameter("city");
+                  String username = request.getParameter("cususename");
+                  String password = request.getParameter("cuspass");
+                  Customers custo = new Customers(first_name,last_name,phone,email,street,city,username,password);
+                  CustomersDAO customersDAO = new CustomersDAO();
+                  customersDAO.insertCustomer(custo);
+                  response.sendRedirect("CustomerServlet");
+                  break;
             case "update":
                 String customer_id = request.getParameter("customer_id");
-                String first_name = request.getParameter("fname");
-                String last_name = request.getParameter("lname");
-                String phone = request.getParameter("phone");
-                String email = request.getParameter("email");
-                String street = request.getParameter("street");
-                String city = request.getParameter("city");
+                first_name = request.getParameter("fname");
+                last_name = request.getParameter("lname");
+                phone = request.getParameter("phone");
+                email = request.getParameter("email");
+                street = request.getParameter("street");
+                city = request.getParameter("city");
                 int cusId = Integer.parseInt(customer_id);
                 Customers customers = new Customers(cusId,first_name,last_name,phone,email,street,city);
-                CustomersDAO customersDAO = new CustomersDAO();
+                customersDAO = new CustomersDAO();
                 customersDAO.updateCustomer(customers);
                 response.sendRedirect("CustomerServlet");
                 break;

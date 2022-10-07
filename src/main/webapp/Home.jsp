@@ -15,5 +15,6 @@
 <a href="register">Register</a>
 <a href="productservlet">Products</a>
 <a href="CustomerServlet">Customer</a>
+<a href="storeservlet">Store</a>
 </body>
 </html>
