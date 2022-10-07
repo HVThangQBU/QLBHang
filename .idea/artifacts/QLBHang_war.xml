@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="QLBHang:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>QLBHang</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="QLBHang-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="QLBHang:war exploded" />
+    </root>
+  </artifact>
+</component>

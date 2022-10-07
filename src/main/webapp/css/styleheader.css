@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.top{
+    background-color: #edd785;
+    height: 20vh;
+    /*                position: fixed;
+                    top: 0;
+                    left: 0;
+                    right: 0;*/
+}
+
+.header{
+    text-align: center;
+    height: 8vh;
+    background-color: transparent;
+}
+
+.header h1{
+    padding-top: 15px;
+}
+
+.header p{
+    padding-top: 15px;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav{
+    text-align: center;
+    height: 10vh;
+    background-color: transparent;
+}
+
+.nav a , .nav form{
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 50px;
+    border: 1px solid burlywood;
+    border-radius: 5px;
+    width: 150px;
+    height: 40px;
+    padding: 10px 0px;
+    background-color: white;
+}
+
+.nav a:hover, a:focus, a.active:link, a.active:visited{
+    color: black;
+    background: bisque;
+}
+
+.nav form{
+    display: inline-block;
+    width: 170px;
+
+}
+
+.nav form input{
+    height: 20px;
+    border: none;
+    width: 10vw;
+    background-color: white;
+}
+
+
+.left{
+    float:  left;
+    background-color: #eeefe9;
+    width: 20%;
+    text-align: center;
+    height: 85vh;
+
+}
+
+.left a{
+    margin: 0 auto;
+    display: block;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    padding: 10px 0px;
+}
+
+.left a:first-child{
+    margin-top: 2em;
+}
+
+.left a:hover, a:focus, a.active:link, a.active:visited{
+    color: black;
+    background: bisque;
+    border-radius: 5px;
+}
+
+.right{
+    float:  right;
+    height: 85vh;
+    /*background-color: blue;*/
+    width: 80%;
+
+}
