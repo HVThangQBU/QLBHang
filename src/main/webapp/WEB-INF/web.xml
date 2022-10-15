@@ -28,7 +28,11 @@
     <servlet-name>StoreServlet</servlet-name>
     <servlet-class>com.example.qlbhang.StoreServlet</servlet-class>
   </servlet>
-  <servlet-mapping>
+    <servlet>
+        <servlet-name>StaffsServlet</servlet-name>
+        <servlet-class>com.example.qlbhang.StaffsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/productservlet</url-pattern>
     </servlet-mapping>
@@ -43,6 +47,10 @@
   <servlet-mapping>
     <servlet-name>StoreServlet</servlet-name>
     <url-pattern>/storeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>StaffsServlet</servlet-name>
+    <url-pattern>/staffsServlet</url-pattern>
   </servlet-mapping>
 </web-app>
 

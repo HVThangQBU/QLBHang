@@ -16,5 +16,6 @@
 <a href="productservlet">Products</a>
 <a href="CustomerServlet">Customer</a>
 <a href="storeservlet">Store</a>
+<a href="staffsServlet">Staffs</a>
 </body>
 </html>

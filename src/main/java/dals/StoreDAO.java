@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 
 public class StoreDAO extends DBContext{
@@ -29,6 +31,23 @@ public class StoreDAO extends DBContext{
       throw new RuntimeException(e);
     }
     return store;
+  }
+
+  public Map<Integer, String> getStoreMap(){
+    Map<Integer, String> map = new HashMap<>();
+    String query = "select store_id, store_name from stores";
+    try{
+      Statement state = connection.createStatement();
+      ResultSet resultSet = state.executeQuery(query);
+      while (resultSet.next()){
+        int store_id = resultSet.getInt(1);
+        String store_name = resultSet.getString(2);
+        map.put(store_id, store_name);
+      }
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+    return map;
   }
 
   public void insertStore(Stores st) {
