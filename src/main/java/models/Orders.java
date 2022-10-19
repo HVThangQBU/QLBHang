@@ -2,36 +2,39 @@ package models;
 
 public class Orders {
   private int  order_id;
-  private int  staff_id;
-  private int  store_id;
-  public String  shipped_date;
-  public String required_date;
-  public String order_date;
-  private int order_status;
   private int customer_id;
+  private int order_status;
+  public String order_date;
+  public String required_date;
+  public String  shipped_date;
+  private int  store_id;
+  private int  staff_id;
+
+
+
 
   public Orders(){};
-  public Orders(int staff_id, int store_id, String shipped_date, String required_date, String order_date, int order_status, int customer_id) {
-    this.staff_id = staff_id;
-    this.store_id = store_id;
-    this.shipped_date = shipped_date;
-    this.required_date = required_date;
-    this.order_date = order_date;
-    this.order_status = order_status;
+
+  public Orders(int customer_id, int order_status, String order_date, String required_date, String shipped_date, int store_id, int staff_id) {
     this.customer_id = customer_id;
+    this.order_status = order_status;
+    this.order_date = order_date;
+    this.required_date = required_date;
+    this.shipped_date = shipped_date;
+    this.store_id = store_id;
+    this.staff_id = staff_id;
   }
 
-  public Orders(int order_id, int staff_id, int store_id, String shipped_date, String required_date, String order_date, int order_status, int customer_id) {
+  public Orders(int order_id, int customer_id, int order_status, String order_date, String required_date, String shipped_date, int store_id, int staff_id) {
     this.order_id = order_id;
-    this.staff_id = staff_id;
-    this.store_id = store_id;
-    this.shipped_date = shipped_date;
-    this.required_date = required_date;
-    this.order_date = order_date;
-    this.order_status = order_status;
     this.customer_id = customer_id;
+    this.order_status = order_status;
+    this.order_date = order_date;
+    this.required_date = required_date;
+    this.shipped_date = shipped_date;
+    this.store_id = store_id;
+    this.staff_id = staff_id;
   }
-
 
   public int getOrder_id() {
     return order_id;

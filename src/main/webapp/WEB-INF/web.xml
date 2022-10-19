@@ -36,6 +36,10 @@
         <servlet-name>OrderServlet</servlet-name>
         <servlet-class>com.example.qlbhang.OrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OrderItemServlet</servlet-name>
+        <servlet-class>com.example.qlbhang.OrderItemServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/productservlet</url-pattern>
@@ -51,6 +55,10 @@
   <servlet-mapping>
     <servlet-name>StoreServlet</servlet-name>
     <url-pattern>/storeservlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>OrderItemServlet</servlet-name>
+    <url-pattern>/orderitemservlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>StaffsServlet</servlet-name>

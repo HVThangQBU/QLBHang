@@ -27,7 +27,6 @@
   <input type="hidden" name="staff_id" value="<%=staffs.getStaff_id()%>">
 
   <table>
-
     <tr>
       <td>First_Name</td>
       <td><input type="text" name="st_first_name" value="<%=staffs.getFirst_name()%>"></td>

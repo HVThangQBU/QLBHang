@@ -17,7 +17,7 @@
   Vector<Customers> customersVector = (Vector<Customers>) request.getAttribute("customer");
   String cname=(String)request.getAttribute("cname");
 %>
-<div>  <a href="CustomerServlet?service=insert">Insert Customer</a></div>
+<div><a href="CustomerServlet?service=insert">Insert Customer</a></div>
 <form action="CustomerServlet">
   <p>Search By Name: <input type="text" name="cname" value="<%=cname%>" />
     <input type="submit" name="search" value="search by name" />

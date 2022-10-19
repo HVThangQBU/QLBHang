@@ -56,7 +56,7 @@
     <td>Manager name</td>
       <td>
         <select name="manager_id">
-          < <option value="" selected disabled hidden>Choose here</option>
+          <option value="" selected disabled hidden>Choose here</option>
           <%for (Staffs staffs: staffsList){%>
           <option value="<%=staffs.getStaff_id()%>"><%=staffs.getFirst_name()%></option>
           <%}%>
