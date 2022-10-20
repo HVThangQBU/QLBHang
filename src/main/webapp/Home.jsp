@@ -18,6 +18,6 @@
 <a href="storeservlet">Store</a>
 <a href="staffsServlet">Staffs</a>
 <a href="orderServlet">Order</a>
-<a href="orderitemservlet">OrderItem</a>
+<a href="orderItemServlet">OrderItem</a>
 </body>
 </html>

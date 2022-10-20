@@ -144,7 +144,7 @@ public class StaffsDAO extends DBContext{
     Staffs staffs1 = new Staffs();
     try {
       pre = connection.prepareStatement(query);
-      pre.setInt(1,Integer.parseInt(id));
+      pre.setInt(1, Integer.parseInt(id));
       resultSet = pre.executeQuery();
       if (resultSet.next()){
         int staff_id = resultSet.getInt(1);

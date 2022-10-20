@@ -58,7 +58,7 @@
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>OrderItemServlet</servlet-name>
-    <url-pattern>/orderitemservlet</url-pattern>
+    <url-pattern>/orderItemServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>StaffsServlet</servlet-name>
