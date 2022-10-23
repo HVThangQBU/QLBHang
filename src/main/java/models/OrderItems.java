@@ -10,8 +10,7 @@ public class OrderItems {
 
   public OrderItems () {}
 
-  public OrderItems(int orderId, int productId, int quanlity, float listPrice, float discount) {
-    this.orderId = orderId;
+  public OrderItems( int productId, int quanlity, float listPrice, float discount) {
     this.productId = productId;
     this.quanlity = quanlity;
     this.listPrice = listPrice;

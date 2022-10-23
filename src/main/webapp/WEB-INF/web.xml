@@ -22,27 +22,27 @@
     </servlet>
     <servlet>
         <servlet-name>ProductServlet</servlet-name>
-        <servlet-class>com.example.qlbhang.ProductServlet</servlet-class>
+        <servlet-class>com.example.qlbhang.admin.ProductServlet</servlet-class>
     </servlet>
   <servlet>
     <servlet-name>StoreServlet</servlet-name>
-    <servlet-class>com.example.qlbhang.StoreServlet</servlet-class>
+    <servlet-class>com.example.qlbhang.admin.StoreServlet</servlet-class>
   </servlet>
     <servlet>
         <servlet-name>StaffsServlet</servlet-name>
-        <servlet-class>com.example.qlbhang.StaffsServlet</servlet-class>
+        <servlet-class>com.example.qlbhang.admin.StaffsServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderServlet</servlet-name>
-        <servlet-class>com.example.qlbhang.OrderServlet</servlet-class>
+        <servlet-class>com.example.qlbhang.admin.OrderServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>OrderItemServlet</servlet-name>
-        <servlet-class>com.example.qlbhang.OrderItemServlet</servlet-class>
+        <servlet-class>com.example.qlbhang.admin.OrderItemServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ProductServlet</servlet-name>
-        <url-pattern>/productservlet</url-pattern>
+        <url-pattern>/admin-productservlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
@@ -54,19 +54,28 @@
     </servlet-mapping>
   <servlet-mapping>
     <servlet-name>StoreServlet</servlet-name>
-    <url-pattern>/storeservlet</url-pattern>
+    <url-pattern>/admin-storeservlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>OrderItemServlet</servlet-name>
-    <url-pattern>/orderItemServlet</url-pattern>
+    <url-pattern>/admin-orderItemServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>StaffsServlet</servlet-name>
-    <url-pattern>/staffsServlet</url-pattern>
+    <url-pattern>/admin-staffsServlet</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>OrderServlet</servlet-name>
-    <url-pattern>/orderServlet</url-pattern>
+    <url-pattern>/admin-orderServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>servletFilter</filter-name>
+    <filter-class>com.example.qlbhang.filter.AuthorizationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>servletFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
 </web-app>
 

@@ -95,7 +95,7 @@ public class StoreDAO extends DBContext{
     }
   }
   public Vector<Stores> searchNameStore(String name){
-    String sql = "select * from stores where store_name like  '"+ name +"' limit 10";
+    String sql = "select * from stores where store_name like  '%"+ name +"%' limit 10";
     Statement statement;
     ResultSet resultSet;
     Vector<Stores> stores = new Vector<>();

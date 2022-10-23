@@ -25,7 +25,7 @@ public class OrderItemDAO extends DBContext{
         int quanlity = resultSet.getInt(4);
         float listPrice = resultSet.getFloat(5);
         float discount = resultSet.getFloat(6);
-        OrderItems orderItems = new OrderItems(itemId, orderId, productId, quanlity, discount, listPrice);
+        OrderItems orderItems = new OrderItems( orderId, itemId, productId, quanlity,  listPrice, discount);
         orderItemsList.add(orderItems);
       }
     } catch (SQLException e) {
@@ -33,22 +33,22 @@ public class OrderItemDAO extends DBContext{
     }
     return orderItemsList;
   }
-  public void insertOrderItem(OrderItems orderItems) {
-    String query = "insert into order_items(order_id, item_id, product_id, quantity, list_price, discount) VALUES(?,?,?,?,?,?)";
-    PreparedStatement preparedStatement;
-    try {
-      preparedStatement = connection.prepareStatement(query);
-      preparedStatement.setInt(1, orderItems.getOrderId());
-      preparedStatement.setInt(2, orderItems.getItemId());
-      preparedStatement.setInt(3, orderItems.getProductId());
-      preparedStatement.setInt(4, orderItems.getQuanlity());
-      preparedStatement.setFloat(5, orderItems.getListPrice());
-      preparedStatement.setFloat(6, orderItems.getDiscount());
-      preparedStatement.executeUpdate();
-    } catch (SQLException e) {
-      throw new RuntimeException(e);
-    }
-  }
+//  public void insertOrderItem(OrderItems orderItems) {
+//    String query = "insert into order_items(order_id, item_id, product_id, quantity, list_price, discount) VALUES(?,?,?,?,?,?)";
+//    PreparedStatement preparedStatement;
+//    try {
+//      preparedStatement = connection.prepareStatement(query);
+//      preparedStatement.setInt(1, orderItems.getOrderId());
+//      preparedStatement.setInt(2, orderItems.getItemId());
+//      preparedStatement.setInt(3, orderItems.getProductId());
+//      preparedStatement.setInt(4, orderItems.getQuanlity());
+//      preparedStatement.setFloat(5, orderItems.getListPrice());
+//      preparedStatement.setFloat(6, orderItems.getDiscount());
+//      preparedStatement.executeUpdate();
+//    } catch (SQLException e) {
+//      throw new RuntimeException(e);
+//    }
+//  }
   public void update (OrderItems orderItems) {
     String sql = "update order_items set product_id=?,quantity=?,list_price=?,discount=? where item_id=? and order_id=?";
     PreparedStatement preparedStatement;
@@ -65,15 +65,27 @@ public class OrderItemDAO extends DBContext{
       throw new RuntimeException(e);
     }
   }
-  public OrderItems getOrderItemId(String idOrder , String idItem ) {
-    String sql = "select * from order_items where order_id =? and item_id=?";
+  public void deleteOrderItem (String idItem, String idOrder) {
+    String sql = "delete from order_items where item_id=? and order_id=? ";
+    PreparedStatement preparedStatement;
+    try {
+      preparedStatement = connection.prepareStatement(sql);
+      preparedStatement.setInt(1, Integer.parseInt(idItem));
+      preparedStatement.setInt(2, Integer.parseInt(idOrder));
+      preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+      throw new RuntimeException(e);
+    }
+  }
+  public OrderItems getOrderItemId(String idItem, String idOrder) {
+    String sql = "select * from order_items where item_id=? and order_id =? ";
     PreparedStatement preparedStatement;
     ResultSet resultSet;
     OrderItems orderItems = new OrderItems();
     try {
       preparedStatement = connection.prepareStatement(sql);
-      preparedStatement.setInt(1, Integer.parseInt(idOrder));
-      preparedStatement.setInt(2, Integer.parseInt(idItem));
+      preparedStatement.setInt(1, Integer.parseInt(idItem));
+      preparedStatement.setInt(2, Integer.parseInt(idOrder));
       resultSet = preparedStatement.executeQuery();
       if (resultSet.next()) {
         int orderId = resultSet.getInt(1);

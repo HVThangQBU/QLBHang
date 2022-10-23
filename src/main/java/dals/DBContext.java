@@ -1,22 +1,25 @@
 package dals;
 
 import java.sql.*;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DBContext {
+  ResourceBundle resourceBundle = ResourceBundle.getBundle("db");
     public Connection connection;
     public DBContext()
     {
         try {
             //Change the username password and url to connect your own database
-            String username = "root";
-            String password = "2001";
-//            String username = "lelong";
-//            String password = "123";
-            String url = "jdbc:mysql://localhost:3307/quanlybanhang";
-//         String url = "jdbc:sqlserver://DCNG249\\SQLEXPRESS:1433;databaseName=LaptopShop1";
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//            String username = "root";
+//            String password = "2001";
+//            String url = "jdbc:mysql://localhost:3307/quanlybanhang";
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+              Class.forName(resourceBundle.getString("driverName"));
+              String username = resourceBundle.getString("user");
+              String password = resourceBundle.getString("password");
+              String url = resourceBundle.getString("url");
             connection = DriverManager.getConnection(url, username, password);
             System.out.println("connect");
         } catch (ClassNotFoundException | SQLException ex) {

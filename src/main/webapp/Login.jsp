@@ -102,30 +102,22 @@
     }
 
   </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <%
   String error = request.getParameter("error");
   String success= (String)request.getAttribute("success");
   String username=request.getParameter("username");
+  String alert = (String) request.getAttribute("alert");
+  String message = (String) request.getAttribute("message");
 
 %>
 <body>
 <div class="login">
-  <p <%if(error!=null ){ %>
-          style="color: red"
-          <%}else{%>
-          style="color: green"
-          <%}%>
-  >
-    <%if(error!=null ){ %>
-    <%=error %>
-    <%}else if(success!=null){%>
-    <%=success %>
-    <%}else{%>
-    <%=""%>
-    <%}%>
-  </p>
   <form method="POST" action="login">
+    <div class="alert alert-<%=alert%>" role="alert">
+      <%=message == null ? "": message%>
+    </div>
     <div class="top_form">
       <input type="hidden" name="s" value="processLogin">
 
@@ -134,7 +126,7 @@
       <input type="password" name="password" placeholder="Password" required>
     </div >
     <div class="button_login">
-      <button>Login</button>
+      <button type="submit">Login</button>
       <div class="line">
       </div>
       <div class="bottom_form">

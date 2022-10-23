@@ -10,9 +10,12 @@ public class Customers {
     String city;
     String username;
     String password;
+    int roleId;
+    private Role role = new Role();
+
     public Customers(){}
 
-    public Customers(int customer_id, String first_name, String last_name, String phone, String email, String street, String city) {
+    public Customers(int customer_id, String first_name, String last_name, String phone, String email, String street, String city, int roleId) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -20,9 +23,21 @@ public class Customers {
         this.email = email;
         this.street = street;
         this.city = city;
+        this.roleId = roleId;
     }
 
-    public Customers(String first_name, String last_name, String phone, String email, String street, String city, String username, String password) {
+  public Customers(String first_name, String last_name, String phone, String email, String street, String city, String username, String password) {
+    this.first_name = first_name;
+    this.last_name = last_name;
+    this.phone = phone;
+    this.email = email;
+    this.street = street;
+    this.city = city;
+    this.username = username;
+    this.password = password;
+  }
+
+  public Customers(String first_name, String last_name, String phone, String email, String street, String city, String username, String password, int roleId) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.phone = phone;
@@ -31,9 +46,10 @@ public class Customers {
         this.city = city;
         this.username = username;
         this.password = password;
+        this.roleId = roleId;
     }
 
-    public Customers(int customer_id, String first_name, String last_name, String phone, String email, String street, String city, String username, String password) {
+    public Customers(int customer_id, String first_name, String last_name, String phone, String email, String street, String city, String username, String password, int roleId) {
         this.customer_id = customer_id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -43,6 +59,7 @@ public class Customers {
         this.city = city;
         this.username = username;
         this.password = password;
+        this.roleId = roleId;
     }
 
     public int getCustomer_id() {
@@ -116,4 +133,20 @@ public class Customers {
     public void setPassword(String password) {
         this.password = password;
     }
+
+  public int getRoleId() {
+    return roleId;
+  }
+
+  public void setRoleId(int roleId) {
+    this.roleId = roleId;
+  }
+
+  public Role getRole() {
+    return role;
+  }
+
+  public void setRole(Role role) {
+    this.role = role;
+  }
 }
