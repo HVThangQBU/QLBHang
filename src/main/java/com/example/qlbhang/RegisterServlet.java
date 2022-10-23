@@ -26,7 +26,8 @@ public class RegisterServlet extends HttpServlet {
         String city = request.getParameter("city");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        Customers cus = new Customers(first_name, last_name, phone, email, street, city, username, password);
+        int roleId = 2;
+        Customers cus = new Customers(first_name, last_name, phone, email, street, city, username, password, roleId);
         CustomersDAO customersDAO = new CustomersDAO();
         customersDAO.insertCustomer(cus);
         response.sendRedirect("login");

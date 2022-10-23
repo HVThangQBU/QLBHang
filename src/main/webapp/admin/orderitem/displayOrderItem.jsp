@@ -19,7 +19,7 @@
   Vector<Products> productsVector = (Vector<Products>) request.getAttribute("productsVector");
 %>
 <div>
-  <div><a href="orderItemServlet?service=insertEdit">Insert</a></div>
+  <div><a href="admin-orderItemServlet?service=insertEdit">Insert</a></div>
   <% if(!orderItemsList.isEmpty()) {%>
   <table border="1">
     <caption></caption>
@@ -44,8 +44,8 @@
       <td><%=orderItems.getQuanlity()%></td>
       <td><%=orderItems.getListPrice()%></td>
       <td><%=orderItems.getDiscount()%></td>
-      <td><a href="orderItemServlet?service=insertEdit&idOrder=<%=orderItems.getOrderId()%>&idOItem=<%=orderItems.getItemId()%>">Update</a></td>
-      <td><a href="orderItemServlet?service=insertEdit&idOrder=<%=orderItems.getOrderId()%>&idOItem=<%=orderItems.getItemId()%>">Delete</a></td>
+      <td><a href="admin-orderItemServlet?service=insertEdit&idOItem=<%=orderItems.getItemId()%>&idOrder=<%=orderItems.getOrderId()%>">Update</a></td>
+      <td><a href="admin-orderItemServlet?service=delete&idOItem=<%=orderItems.getItemId()%>&idOrder=<%=orderItems.getOrderId()%>">Delete</a></td>
     </tr>
     <%}%>
   </table>
